@@ -38,7 +38,9 @@ for fileid in brown.fileids():
     num_sents = len(brown.sents(fileid))
     num_vocab = len(set([w.lower()
     for w in brown.words(fileid)]))
-    print (int(num_chars/num_words),'\t\t\t', int(num_words/num_sents),'\t\t\t', int(num_words/num_vocab),'\t\t\t', fileid)
+    print (int(num_chars/num_words),'\t\t\t', 
+    int(num_words/num_sents),'\t\t\t', 
+    int(num_words/num_vocab),'\t\t\t', fileid)
 ######################
 Create and use your own corpora(plaintext,Categorical)
 import codecs
@@ -57,7 +59,9 @@ for fileid in gutenberg.fileids():
         num_words=len(gutenberg.words(fileid))
         num_sents=len(gutenberg.sents(fileid))
         num_vocab=len(set([w.lower() for w in gutenberg.words(fileid)]))
-print(int(num_chars/num_words),'\t\t',int(num_words/num_sents),'\t\t',int(num_words/num_vocab),'\t\t',fileid)
+print(int(num_chars/num_words),
+'\t\t',int(num_words/num_sents),
+'\t\t',int(num_words/num_vocab),'\t\t',fileid)
 ############################
 Tokenization of sentence and words
 import nltk
@@ -74,13 +78,14 @@ print(words)
 Program to find the most frequent noun tags
 import nltk
 from collections import defaultdict
-text = nltk.word_tokenize("Nick likes to play football. Nick does not like to play cricket.")
+text = nltk.word_tokenize("Nick likes to play")
 tagged = nltk.pos_tag(text) 
 print(tagged)
 addNounWords = []
 count=0
 for words in tagged:val = tagged[count][1]
-if(val == 'NN' or val == 'NNS' or val == 'NNPS' or val == 'NNP'): addNounWords.append(tagged[count][0])
+if(val == 'NN' or val == 'NNS' or val == 'NNPS' or val == 'NNP'): 
+addNounWords.append(tagged[count][0])
 count+=1
 print (addNounWords) 
 temp = defaultdict(int)
@@ -396,7 +401,8 @@ Therefore, checking them using index
             return "Rejected" # else of 2nd if
         return "Rejected" # else of 1st if
     
-inputs=['1','10101','101','10111','01010','100','','10111101','1011111']
+inputs=['1','10101','101','10111',
+'01010','100','','10111101','1011111']
 for i in inputs:
     print(i,"is",FA(i))
 ##########################
